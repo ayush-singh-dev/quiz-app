@@ -7,7 +7,7 @@ const Result = ({ handleRestartQuiz, score, quizData, quizHistory }) => {
     return "Needs Improvement! 📚";
   };
   const lastScore =
-    quizHistory.length > 0 ? quizHistory[quizHistory.length - 2].score : "N/A";
+    quizHistory.length > 0 ? quizHistory[quizHistory.length - 1].score : "N/A";
   return (
     <div>
       <div className="bg-white shadow-lg rounded-lg p-6 max-w-lg mx-auto text-center">
