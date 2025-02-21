@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Result = ({ handleRestartQuiz, score, quizData, quizHistory }) => {
   const getPerformanceMessage = () => {
     if (score >= 8) return "Excellent! 🌟";
@@ -31,6 +32,16 @@ const Result = ({ handleRestartQuiz, score, quizData, quizHistory }) => {
       </div>
     </div>
   );
+};
+Result.propTypes = {
+  handleRestartQuiz: PropTypes.func.isRequired,
+  score: PropTypes.number.isRequired,
+  quizData: PropTypes.array.isRequired,
+  quizHistory: PropTypes.arrayOf(
+    PropTypes.shape({
+      score: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Result;
